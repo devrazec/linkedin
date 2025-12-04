@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
+import Header from '../components/Header';
+
 
 export function Home() {
   const {
@@ -29,10 +31,6 @@ export function Home() {
   } = useContext(GlobalContext);
 
   return (
-    <div>
-      <h1>Home Page</h1>
-      <Link to="/linkedin">Linkedin</Link> |{' '}
-      <Link to="/notfound">Not Found</Link>
-    </div>
+    <Header />
   );
 }

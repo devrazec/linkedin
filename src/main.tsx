@@ -5,6 +5,7 @@ import App from './App.tsx';
 import { HashRouter } from 'react-router-dom';
 import GlobalContext from './context/GlobalContext';
 
+import 'flag-icons/css/flag-icons.min.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
