@@ -21,7 +21,11 @@ const ResetView = () => {
     if (!zoomControl) return;
 
     // Create a container for the button
-    const btn = L.DomUtil.create('a', 'leaflet-control-zoom-reset', zoomControl);
+    const btn = L.DomUtil.create(
+      'a',
+      'leaflet-control-zoom-reset',
+      zoomControl
+    );
     btn.href = '#';
     btn.title = 'Return to default view';
 

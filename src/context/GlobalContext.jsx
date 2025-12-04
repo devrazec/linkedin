@@ -12,11 +12,11 @@ const GlobalProvider = props => {
   const [flagOpen, setFlagOpen] = useState(false);
   const [flag, setFlag] = useState('us');
   const [hoveredId, setHoveredId] = useState(null);
-  
+
   const [region, setRegion] = useState({
     All: L.latLngBounds([
-      [36.9, -9.5],   // southwestern Portugal
-      [42.1, -6.2],   // northeastern Portugal
+      [36.9, -9.5], // southwestern Portugal
+      [42.1, -6.2], // northeastern Portugal
     ]),
     Lisbon: L.latLngBounds([
       [38.69, -9.25],
@@ -32,7 +32,7 @@ const GlobalProvider = props => {
     ]),
     Coimbra: L.latLngBounds([
       [40.18, -8.48],
-      [40.23, -8.40],
+      [40.23, -8.4],
     ]),
     Braga: L.latLngBounds([
       [41.53, -8.47],
@@ -40,11 +40,11 @@ const GlobalProvider = props => {
     ]),
     Bragança: L.latLngBounds([
       [41.79, -6.75],
-      [41.83, -6.70],
+      [41.83, -6.7],
     ]),
     Leiria: L.latLngBounds([
       [39.74, -8.87],
-      [39.76, -8.80],
+      [39.76, -8.8],
     ]),
     Guarda: L.latLngBounds([
       [40.53, -7.48],
