@@ -2,6 +2,8 @@ import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
 import Header from '../components/Header';
+import FilterBar from '../components/FilterBar';
+import Content from '../components/Content';
 
 export function Home() {
   const {
@@ -29,5 +31,11 @@ export function Home() {
     setInitialView,
   } = useContext(GlobalContext);
 
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <FilterBar />
+      <Content />
+    </>
+  );
 }
