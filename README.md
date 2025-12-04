@@ -1,5 +1,6 @@
-# linkedin
-Building a Project with React
+# Job Listings Website
+
+This is a dynamic job listings project built with React and Material-UI (MUI), showcasing tech job opportunities across Portugal. The application generates job data, including company info, positions, tech stacks, salaries, locations, and interactive actions such as applying or viewing details on a map.
 
 # 🧰 Tech Stack
 
@@ -9,8 +10,37 @@ Building a Project with React
 | React-Leaflet | Map engine |
 | Leaflet | Geospatial rendering & marker system |
 | Material UI | UI components |
+| DataGrid | Custom renderCell layouts |
+| Data Generation | Generator for demo data |
 | Context API | Global state management |
 | CSS | Styling & layout |
+
+# ✨ Features
+
+## Randomly generated job listings with:
+
+- Company name and logo
+- Position and tech stack
+- Salary
+- City and work type (Remote / On-site)
+- Latitude and longitude within city bounds
+
+## Interactive DataGrid:
+
+- Custom row layout with company logo and detailed info
+- Action buttons: Apply, See More, Map
+- See More button opens a modal with detailed job info
+- Responsive row heights and clean styling
+- Top bar with total results and title
+- Map Integration
+- Each job row includes coordinates for its location
+- Can link to Google Maps or other map integrations
+
+## Modern UI:
+
+- Material-UI buttons with hover effects
+- Professional, clean, and responsive design
+- Perfect for demo, testing, or prototyping a job dashboard
 
 # Commands
 
