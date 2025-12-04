@@ -241,21 +241,35 @@ const Header = () => {
                                 onClick={(e) => setLangAnchor(e.currentTarget)}
                                 aria-label="Change language"
                                 sx={{
+                                    p: 0.5,
                                     transition: "background-color 0.2s ease",
                                     "&:hover": {
                                         backgroundColor: "rgba(0, 0, 0, 0.04)"
                                     }
                                 }}
                             >
-                                <span
-                                    className={flags[lang]}
-                                    style={{
-                                        width: 24,
-                                        height: 24,
+                                <Box
+                                    sx={{
+                                        width: 28,
+                                        height: 28,
                                         borderRadius: "50%",
-                                        display: "inline-block"
+                                        overflow: "hidden",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        border: "1px solid #e0e0e0"
                                     }}
-                                />
+                                >
+                                    <span
+                                        className={flags[lang]}
+                                        style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            display: "block",
+                                            transform: "scale(1.5)"
+                                        }}
+                                    />
+                                </Box>
                             </IconButton>
                             <Menu
                                 anchorEl={langAnchor}
@@ -265,42 +279,81 @@ const Header = () => {
                                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                             >
                                 <MenuItem onClick={() => changeLang("en")}>
-                                    <span
-                                        className={flags.en}
-                                        style={{
-                                            width: 20,
-                                            height: 20,
+                                    <Box
+                                        sx={{
+                                            width: 24,
+                                            height: 24,
                                             borderRadius: "50%",
-                                            marginRight: 8,
-                                            display: "inline-block"
+                                            overflow: "hidden",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            marginRight: 1.5,
+                                            border: "1px solid #e0e0e0"
                                         }}
-                                    />
+                                    >
+                                        <span
+                                            className={flags.en}
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                display: "block",
+                                                transform: "scale(1.5)"
+                                            }}
+                                        />
+                                    </Box>
                                     English
                                 </MenuItem>
                                 <MenuItem onClick={() => changeLang("pt")}>
-                                    <span
-                                        className={flags.pt}
-                                        style={{
-                                            width: 20,
-                                            height: 20,
+                                    <Box
+                                        sx={{
+                                            width: 24,
+                                            height: 24,
                                             borderRadius: "50%",
-                                            marginRight: 8,
-                                            display: "inline-block"
+                                            overflow: "hidden",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            marginRight: 1.5,
+                                            border: "1px solid #e0e0e0"
                                         }}
-                                    />
+                                    >
+                                        <span
+                                            className={flags.pt}
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                display: "block",
+                                                transform: "scale(1.5)"
+                                            }}
+                                        />
+                                    </Box>
                                     Portuguese
                                 </MenuItem>
                                 <MenuItem onClick={() => changeLang("es")}>
-                                    <span
-                                        className={flags.es}
-                                        style={{
-                                            width: 20,
-                                            height: 20,
+                                    <Box
+                                        sx={{
+                                            width: 24,
+                                            height: 24,
                                             borderRadius: "50%",
-                                            marginRight: 8,
-                                            display: "inline-block"
+                                            overflow: "hidden",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            marginRight: 1.5,
+                                            border: "1px solid #e0e0e0"
                                         }}
-                                    />
+                                    >
+                                        <span
+                                            className={flags.es}
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                display: "block",
+                                                transform: "scale(1.5)"
+                                            }}
+                                        />
+                                    </Box>
                                     Spanish
                                 </MenuItem>
                             </Menu>
