@@ -1,33 +1,42 @@
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import { useEffect, useContext } from 'react';
-import { GlobalContext } from '../context/GlobalContext';
+import { useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const ShowMyLocation = () => {
   const map = useMap();
 
   useEffect(() => {
-    // Wait for the zoom control to exist
     const zoomControl = document.querySelector('.leaflet-control-zoom');
     if (!zoomControl) return;
 
-    // Create a new button inside the zoom panel
+    // Create a container for the button
     const btn = L.DomUtil.create(
       'a',
       'leaflet-control-zoom-location leaflet-control-zoom-in',
       zoomControl
     );
 
-    btn.innerHTML = '<i class="bi bi-geo-alt-fill"></i>';
     btn.href = '#';
     btn.title = 'Show my location';
 
-    // Styling to match Leaflet buttons visually
+    // Styling to match Leaflet zoom buttons
     btn.style.display = 'flex';
     btn.style.alignItems = 'center';
     btn.style.justifyContent = 'center';
-    btn.style.fontSize = '18px';
+    btn.style.width = '30px';
+    btn.style.height = '30px';
+    btn.style.fontSize = '30px';
+    btn.style.cursor = 'pointer';
 
+    // Render the Material UI icon into the button
+    const iconContainer = document.createElement('span');
+    btn.appendChild(iconContainer);
+    const root = createRoot(iconContainer);
+    root.render(<LocationOnIcon sx={{ fontSize: 20, color: '#000' }} />);
+
+    // Click handler to show user location
     btn.onclick = e => {
       e.preventDefault();
 
@@ -39,11 +48,9 @@ const ShowMyLocation = () => {
       navigator.geolocation.getCurrentPosition(
         pos => {
           const { latitude, longitude } = pos.coords;
-
-          // Move map to user’s location WITHOUT changing zoom
           map.panTo([latitude, longitude], { animate: true });
 
-          // Optional: add a marker or a circle
+          // Optional: add a marker or circle
           L.circleMarker([latitude, longitude], {
             radius: 8,
             weight: 2,
@@ -61,6 +68,7 @@ const ShowMyLocation = () => {
     // Cleanup on unmount
     return () => {
       if (zoomControl.contains(btn)) zoomControl.removeChild(btn);
+      root.unmount();
     };
   }, [map]);
 

@@ -26,7 +26,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import FilterBar from './FilterBar';
 
-
 // Navigation item component with hover and active states
 const NavItem = ({ icon: Icon, label, active, badge, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
