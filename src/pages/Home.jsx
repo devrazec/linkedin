@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
 import Header from '../components/Header';
 
-
 export function Home() {
   const {
     darkMode,
@@ -30,7 +29,5 @@ export function Home() {
     setInitialView,
   } = useContext(GlobalContext);
 
-  return (
-    <Header />
-  );
+  return <Header />;
 }
