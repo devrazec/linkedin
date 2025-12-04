@@ -95,14 +95,6 @@ rules: {
 
 git rm --cached .env
 
--- Maps
-
-npm i -S leaflet
-npm i -S leaflet-draw
-npm i -S react-leaflet@next
-npm i -S react-leaflet-cluster
-npm i -S react-leaflet-draw
-
 -- UI
 
 npm i -S @mui/material @emotion/react @emotion/styled 
@@ -122,9 +114,15 @@ npm i -S flag-icons @mui/icons-material iconsax-react @iconify/react react-icons
 
 -- Components
 
-@mui/x-date-pickers dayjs @mui/x-data-grid @mui/x-data-grid-generator
+npm i -S @mui/x-date-pickers dayjs @mui/x-data-grid @mui/x-data-grid-generator
 
+-- Maps
 
+npm i -S leaflet
+npm i -S leaflet-draw
+npm i -S react-leaflet@next
+npm i -S react-leaflet-cluster
+npm i -S react-leaflet-draw
 
 -- Run
 
